@@ -1,0 +1,41 @@
+$backgroundColor: #fcfdb5;
+$radius: 40%;
+$btnColor: #59cdf0;
+$hvrColor: #ff1717;
+
+form {
+  display: inline-block;
+  background-color: $backgroundColor;
+  margin: auto;
+  width: 273px;
+  border: 1px solid rgba(0, 0, 0, 0.411);
+  margin-top: 10vw;
+  position: relative;
+
+  label {
+    display: flex;
+    margin: 1rem 0;
+
+    &.methods {
+      span {
+        cursor: pointer;
+        margin-right: 1rem;
+        padding: .25rem .5rem;
+        background: $btnColor;
+
+        &:hover, &.active {
+          background: $hvrColor;
+        }
+      }
+    }
+    
+      button {
+        cursor: pointer;
+        background: $btnColor ;
+        &:hover, &.active {
+          background: $hvrColor;
+       
+      }
+    }
+  }
+}

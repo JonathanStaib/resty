@@ -1,0 +1,35 @@
+import React from 'react';
+
+import './Form.scss';
+
+const Form = (props) => {
+  const { handleApiCall } = props;
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+    const formData = {
+      method:'GET',
+      url: e.target.url.value,
+    };
+    handleApiCall(formData);
+  }
+    return (
+      <>
+        <form onSubmit={handleSubmit}>
+          <label >
+            <span>URL: </span>
+            <input name='url' type='text' />
+            <button id="go"type="submit">GO!</button>
+          </label>
+          <label className="methods">
+            <span id="get">GET</span>
+            <span id="post">POST</span>
+            <span id="put">PUT</span>
+            <span id="delete">DELETE</span>
+          </label>
+        </form>
+      </>
+    );
+  }
+
+export default Form;
