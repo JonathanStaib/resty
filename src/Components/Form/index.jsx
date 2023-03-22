@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Form.scss';
 
 const Form = (props) => {
+  const [method, useMethod] = useState('GET');
   const { handleApiCall } = props;
-
-const handleSubmit = (e) => {
-  e.preventDefault();
+  
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+  console.log(e.target);
     const formData = {
-      method:'GET',
+      method: method,
       url: e.target.url.value,
     };
     handleApiCall(formData);
   }
+
+
+  
     return (
       <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={HandleSubmit}>
           <label >
             <span>URL: </span>
             <input name='url' type='text' />
