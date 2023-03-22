@@ -6,7 +6,12 @@ const Results = (props) => {
     return (
       <>
       <section>
-      <pre>{data ? JSON.stringify(data, undefined, 2) : null}</pre>
+        {
+          props.loading
+          ?<p>Loading...</p>
+          : <pre data-testid="results-json">{data ? JSON.stringify(data, undefined, 2) : null}</pre>
+        }
+      </section>
 
         {/* <pre>{data ? 
         <li>
@@ -35,7 +40,6 @@ const Results = (props) => {
         </li>
         : null}</pre> */}
         
-      </section>
       
       </>
     );
