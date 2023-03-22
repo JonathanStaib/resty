@@ -1,5 +1,9 @@
 import React from 'react';
 
+import JSONPretty from 'react-json-pretty';
+
+import Mon from'react-json-pretty/themes/monikai.css';
+
 const Results = (props) => {
   const { data } = props;
 
@@ -9,7 +13,7 @@ const Results = (props) => {
         {
           props.loading
           ?<p>Loading...</p>
-          : <pre data-testid="results-json">{data ? JSON.stringify(data, undefined, 2) : null}</pre>
+          : <pre data-testid="results-json">{data ? <JSONPretty data={data} theme={Mon}></JSONPretty> : null}</pre>
         }
       </section>
 

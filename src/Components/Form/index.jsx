@@ -5,7 +5,7 @@ import './Form.scss';
 const Form = (props) => {
   const [method, setMethod] = useState('GET');
   const { handleApiCall } = props;
-  
+
   const HandleSubmit = (e) => {
     e.preventDefault();
   console.log(e.target);
@@ -14,6 +14,7 @@ const Form = (props) => {
       url: e.target.url.value,
     };
     handleApiCall(formData);
+
   }
 
 

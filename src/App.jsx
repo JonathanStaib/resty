@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import './App.scss';
@@ -18,8 +18,16 @@ const App = () => {
   const [requestParams, setRequestParams] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const callApi = async (requestParams) => {
-    const data = await axios(requestParams);
+useEffect(() => {
+  console.log('Mounted');
+  async function getData() {
+    let newData = await axios(requestParams);
+    setData(newData.data.results);
+  }
+  getData();
+},[requestParams])
+
+  const callApi = (requestParams) => {
     setLoading(true);
     setTimeout(() => {
       setData(data);
@@ -34,7 +42,9 @@ const App = () => {
         <Header />
         <div>Request Method: {requestParams.method}</div>
         <div>URL: {requestParams.url}</div>
-        <Form handleApiCall={callApi} />
+        <Form 
+        handleApiCall={callApi} 
+        />
         <Results data={data} loading={loading}/>
         <Footer />
       </React.Fragment>
