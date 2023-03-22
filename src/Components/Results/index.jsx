@@ -9,7 +9,7 @@ const Results = (props) => {
         {
           props.loading
           ?<p>Loading...</p>
-          : <pre>{data ? JSON.stringify(data, undefined, 2) : null}</pre>
+          : <pre data-testid="results-json">{data ? JSON.stringify(data, undefined, 2) : null}</pre>
         }
       </section>
 
