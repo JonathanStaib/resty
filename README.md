@@ -1,4 +1,4 @@
-# LAB - Class 26
+# LAB - Class 26 and 27
 
 ## Project: restY
 
@@ -6,7 +6,7 @@
 
 ### Problem Domain
 
-Using the server code create a react app changing class components to functional components, style with scss and deploy on sandbox.
+Using the server code create a react app changing class components to functional components, style with scss and deploy on sandbox. Added in some useState in functional components.
 
 ### Links and Resources
 
