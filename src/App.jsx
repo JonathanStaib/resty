@@ -16,12 +16,16 @@ const App = () => {
 
   const [data, setData] = useState(null);
   const [requestParams, setRequestParams] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const callApi = async (requestParams) => {
-    // mock output
     const data = await axios(requestParams);
-    setData(data);
-    setRequestParams(requestParams);
+    setLoading(true);
+    setTimeout(() => {
+      setData(data);
+      setRequestParams(requestParams);
+      setLoading(false);
+    }, 1000);
   }
 
    
@@ -31,7 +35,7 @@ const App = () => {
         <div>Request Method: {requestParams.method}</div>
         <div>URL: {requestParams.url}</div>
         <Form handleApiCall={callApi} />
-        <Results data={data} />
+        <Results data={data} loading={loading}/>
         <Footer />
       </React.Fragment>
     );
