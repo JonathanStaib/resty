@@ -27,4 +27,4 @@ only /get at the moment with the api url of your choice but I have only used pok
 
 #### UML
 
-![](UML.Png)
+![](./assets/UML.png)
