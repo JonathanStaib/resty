@@ -22,7 +22,7 @@ useEffect(() => {
   console.log('Mounted');
   async function getData() {
     let newData = await axios(requestParams);
-    setData(newData.data.results);
+    setData(newData.data);
   }
   getData();
 },[requestParams])
