@@ -21,8 +21,10 @@ const App = () => {
 useEffect(() => {
   console.log('Mounted');
   async function getData() {
-    let newData = await axios(requestParams);
-    setData(newData.data);
+    if(requestParams.method && requestParams.url){
+      let newData = await axios(requestParams);
+      setData(newData.data);
+    }
   }
   getData();
 },[requestParams])
