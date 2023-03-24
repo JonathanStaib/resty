@@ -29,6 +29,15 @@ useEffect(() => {
   getData();
 },[requestParams])
 
+// const historyReducer = (newData=data, action) => {
+//   switch(action.type){
+//     case('ADD'):
+//       return{newData: [data, action.payload]};
+//     default:
+//       return newData;
+//   };
+// }
+
   const callApi = (requestParams) => {
     setLoading(true);
     setTimeout(() => {
