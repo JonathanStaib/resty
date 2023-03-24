@@ -1,4 +1,4 @@
-# LAB - Class 26 and 27 and 28
+# LAB - Class 26, 27, 28 and 29
 
 ## Project: restY
 
@@ -6,7 +6,7 @@
 
 ### Problem Domain
 
-Using the server code create a react app changing class components to functional components, style with scss and deploy on sandbox. Added in some useState in functional components. Add in useEffect to await an axios url request, repond with pretty json.
+Using the server code create a react app changing class components to functional components, style with scss and deploy on sandbox. Added in some useState in functional components. Add in useEffect to await an axios url request, repond with pretty json. Add in url use history where the data can be accessed as well as create a reducer function.
 
 ### Links and Resources
 
